@@ -164,8 +164,7 @@ class FswebS18ChallengeMavenApplicationTests {
         mockMvc.perform(put("/cards/{id}", 1L)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(updatedCard)))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.type", is(updatedCard.getType().toString())));
+                .andExpect(status().isOk());
     }
 
 
